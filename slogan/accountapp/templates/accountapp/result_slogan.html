@@ -1,0 +1,91 @@
+{% extends 'accountapp/base.html' %} {% block content %}
+
+<style>
+* {
+    box-sizing: border-box;
+}
+      .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: 700px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #eee;
+      }
+      .wrapper > div {
+        padding: 5px;
+      }
+      .wrapper select {
+        width: 100px;
+      }
+      .wrapper-slogans {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 1200px;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: #eee;
+      }
+      .wrapper-slogans > div {
+        padding: 5px;
+      }
+      .wrapper-slogans > div > ul {
+          display: block;
+          background-color: #ddd;
+          padding: 10px;
+          list-style: none;
+      }
+      .wrapper-slogans > div > ul > li {
+          border-bottom: 1px dashed #555;
+      }
+</style>
+
+    <div>
+
+        <form action="/account/result_slogan/" method="POST">
+            {% csrf_token %}
+            <div class="wrapper">
+                <div>
+                  <select name="select" id="select">
+                    <option value="ko_slogan">한글 슬로건</option>
+                    <option value="en_slogan">영어 슬로건</option>
+                    <option value="model_slogan">Beta 한글</option>
+                  </select>
+                </div>
+                <div>
+                  <input type="text" name="info" />
+                </div>
+                <div>
+                  <input type="range" name="sim" class="slider" value="0" min="0" max="100" step="5"/>
+                </div>
+                <div>
+                  <input type="submit" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+  <div class="wrapper-slogans">
+      {% if select == 'ko_slogan' %}
+        {% for list in slogans %}
+            <div>
+                <ul>
+                    {% for slogan in list %}
+                        <li>{{ slogan }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+      {% else %}
+        {% for slogan in slogans %}
+            <div>
+                <ul>
+                    <li>{{ slogan }}</li>
+                </ul>
+            </div>
+        {% endfor %}
+      {% endif %}
+  </div>
+
+
+{% endblock %}
