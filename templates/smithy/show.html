@@ -1,0 +1,25 @@
+{% extends 'accountapp/base.html' %} {% block content %}
+{% load static %}
+
+
+	<div class="a">
+		<h1>Result</h1>
+	</div>
+	
+	{% for slogan in slogans %}
+		<p>
+			{{ forloop.counter }}
+		</p>
+		<div style="position: relative;">
+
+			<img src= "{% static 'img/show.png' %}" alt="배경" class="img-rounded" width="700" height="700">
+
+			<div style="left: 60px; width: 570px; bottom: 355px; font-size: 1.3em; color: #4c4a48; font-weight: bold; position: absolute; text-align: center; opercity: 0.9;">
+				{{ slogan }}
+			</div>
+			
+		</div>
+		
+	{% endfor %}
+
+{% endblock %}
