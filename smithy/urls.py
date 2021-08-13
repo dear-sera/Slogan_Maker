@@ -1,17 +1,17 @@
 from django.urls import path
 
-from accountapp.views.main import main_slogan, result, show, loading_view
+from smithy.views.main import main_slogan, result, show, loading_view
 
-# from accountapp.views.make_slogan import result_slogan
+# from smithy.views.make_slogan import result_slogan
 from django.contrib.auth.views import LoginView, LogoutView
-from accountapp.views.account import AccountCreateView, AccountDetailView, AccountUpdateView
+from smithy.views.account import AccountCreateView, AccountDetailView, AccountUpdateView
 
-app_name = "accountapp"
+app_name = "smithy"
 
 urlpatterns = [
     path("update/<int:pk>", AccountUpdateView.as_view(), name="update"),
     path("detail/<int:pk>", AccountDetailView.as_view(), name="detail"),
-    path("login/", LoginView.as_view(template_name="accountapp/login.html"), name="login"),
+    path("login/", LoginView.as_view(template_name="smithy/login.html"), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("create/", AccountCreateView.as_view(), name="create"),
     path("index/", main_slogan, name="index"),  # url, 연결할 view 함수명, name
