@@ -3,12 +3,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from accountapp.models import main_slogan
 from django.utils import timezone
 from django.views.generic import CreateView, DetailView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
-from accountapp.forms import AccountUpdateForm
+from smithy.forms import AccountUpdateForm
 
 
 class AccountCreateView(CreateView):
@@ -30,5 +29,3 @@ class AccountUpdateView(UpdateView):
     form_class = AccountUpdateForm
     success_url = reverse_lazy("accountapp:index")  # 성공시 돌아가는 url
     template_name = "accountapp/update.html"  # 회원가입 할 때 보여질 html
-
-
