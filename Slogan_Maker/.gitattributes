@@ -1,0 +1,5 @@
+en_slogan_2epoch_model.pth filter=lfs diff=lfs merge=lfs -text
+processed_slogan_final_5epoch_model.pth filter=lfs diff=lfs merge=lfs -text
+accountapp/model/processed_slogan_final_5epoch_model.pth filter=lfs diff=lfs merge=lfs -text
+accountapp/models/en_slogan_2epoch_model.pth filter=lfs diff=lfs merge=lfs -text
+accountapp/models/processed_slogan_final_5epoch_model.pth filter=lfs diff=lfs merge=lfs -text
