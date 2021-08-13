@@ -7,7 +7,6 @@ import sys
 import json
 import urllib.request
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
-import urllib.parse
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -106,7 +105,7 @@ def translate(user_text):
     print(client_id)
     client_secret = env('client_secret')
     encText = urllib.parse.quote(input_text)
-    data = "source=ko&target=en&text=%s"%urllib.parse.quote(encText)
+    data = "source=ko&target=en&text=" + encText
     url = "https://openapi.naver.com/v1/papago/n2mt"
     request = urllib.request.Request(url)
     request.add_header("X-Naver-Client-Id", client_id)
