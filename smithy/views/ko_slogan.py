@@ -63,8 +63,8 @@ def ko_api(text):
                    },
         data=json.dumps({
       "text": text,
-      "num_samples": 20,
-      "length": 50
+      "num_samples": 50,
+      "length":20
         }))
 
     #슬로건 추가
