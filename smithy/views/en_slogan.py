@@ -12,7 +12,7 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 environ.Env.read_env(
     env_file=os.path.join(BASE_DIR, '.env'))
@@ -102,6 +102,7 @@ def sample_sequence(
 def translate(user_text):
     input_text = user_text
     client_id = env('client_id')
+    print(client_id)
     client_secret = env('client_secret')
     encText = urllib.parse.quote(input_text)
     data = "source=ko&target=en&text=" + encText

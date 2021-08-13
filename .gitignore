@@ -22,7 +22,7 @@
 
 .env
 
-accountapp/models/
+smithy/models/
 
 db.sqlite3
 
