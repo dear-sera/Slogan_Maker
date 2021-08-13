@@ -42,7 +42,7 @@
 
     <div>
 
-        <form action="/account/loading/" method="POST">
+        <form action="/smithy/loading/" method="POST">
             {% csrf_token %}
             <div class="wrapper">
                 <div>
@@ -65,7 +65,7 @@
         </form>
     </div>
 
-    <form action="/account/show/" method="POST">
+    <form action="/smithy/show/" method="POST">
         {% csrf_token %}
         <div class="wrapper-slogans">
           {% if select == 'ko_slogan' %}
