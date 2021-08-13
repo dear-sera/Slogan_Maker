@@ -30,22 +30,19 @@ def result(request):
         slogan_list = ko_api(text)
         kor_list = differ(slogan_list)
         total_slogan = extraction(kor_list, sim)
-        context = {"slogans": total_slogan, "select": select}
+        context = {"slogans": total_slogan, "select": select, "info": info, "sim": sim}
     elif select == "en_slogan":
         slogans = enslogan(info)
-        context = {"slogans": slogans, "select": select}
+        context = {"slogans": slogans, "select": select, "info": info, "sim": sim}
     else:
         slogans = koslogan(info)
-        context = {'slogans': slogans, 'select': select}
+        context = {"slogans": slogans, "select": select, "info": info, "sim": sim}
 
     return render(request, "smithy/result_slogan.html", context=context)
 
 
-def show(request):
-    value = request.POST.getlist("checkvalue")
-    # paginator = Paginator(value, 1)
-    # page = request.GET.get("page")
-    # posts = paginator.get_page(page)
-    context = {"slogans": value}
-
-    return render(request, "smithy/show.html", context=context)
+# def show(request):
+#     value = request.POST.getlist("checkvalue")
+#     context = {"slogans": value}
+#
+#     return render(request, "smithy/show.html", context=context)

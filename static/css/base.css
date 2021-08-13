@@ -8,7 +8,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+@font-face {
+  src: url("../font/Sacramento-Regular.ttf");
+  font-family: slogan;
+}
 /* ------------------------------------------------------------------------------------ */
 
 body {
@@ -45,9 +48,9 @@ a:hover {
 }
 
 .navbar__logo {
-  font-size: 24px;
+  font-size: 35px;
   color: var(--text-color);
-  font-family: "Homemade Apple", cursive;
+  font-family: "slogan";
 }
 
 .navbar__menu {
@@ -168,36 +171,13 @@ a:hover {
   outline: 0;
   background-color: rgba(255, 255, 255, 0);
 }
-/* .inputbox__dropdownSelect {
-  height: 80%;
-  width: 30%;
-  color: #1f2124;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 15px;
-  cursor: pointer;
-}
-.inputbox__dropdownList {
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-weight: 700;
-}
-.select {
-  font-weight: 700;
-}
-
-.inputbox__dropdownList__item {
-  padding: 15px;
-  font-size: 15px;
-} */
 
 .inputbox__inputtext {
   border: none;
   outline: none;
   background: transparent;
   height: 80%;
-  width: 350px;
+  width: 400px;
   text-align: center;
   font-family: "Noto Sans KR", sans-serif;
   color: #1f2124;
@@ -211,7 +191,7 @@ a:hover {
 }
 .range {
   height: 80px;
-  width: 350px;
+  width: 300px;
   border-radius: 10px;
   padding: 0 65px 0 45px;
 }
@@ -334,8 +314,145 @@ a:hover {
   }
 }
 
-.slogan_footer  {
-    text-align:center;
-    margin-top: 2rem;
+/*------------- result slogan -------------*/
+
+.mainbox__result {
+  padding: 30px;
+  max-width: 1024px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Karla", sans-serif;
 }
 
+.wrapper_slogans {
+  max-width: 1600px;
+  padding: 30px 30px;
+  margin: auto;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  color: var(--common-color);
+  font-size: 30px;
+}
+
+.wrapper_slogan__ko {
+  display: flex;
+  margin: 10px 10px;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  width: 750px;
+  height: 300px;
+  padding: 30px 30px;
+  list-style: none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.wrapper_slogan__en {
+  padding: 10px 10px;
+}
+
+.wrapper_slogan__ko :first-child {
+  margin-bottom: 75px;
+}
+
+.wrapper_slogan__ko :not(:first-child) {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.wrapper_slogan__en div {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  width: 365px;
+  height: 365px;
+  padding: 30px 30px;
+  list-style: none;
+  font-family: "Noto Sans Kr", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.wrapper_slogan__ko div:hover {
+  transform: scale(1.02);
+}
+.wrapper_slogan__en div:hover {
+  transform: scale(1.02);
+}
+
+.modal {
+  position: flex;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.modal__content {
+  background-image: url("../img/popup.png");
+  padding: 50px 100px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  width: 1280px;
+  height: 720px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 69px rgba(0, 0, 0, 0.23);
+}
+.modal__input {
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Permanent Marker", "Gowun Batang", serif;
+  font-size: 40px;
+  color: #1f2124;
+  opacity: 0.95;
+}
+
+.hidden {
+  display: none;
+}
+
+.x_button {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 0%;
+  right: 0%;
+  transform: translate(40%, -40%);
+  background: var(--box-color);
+  border-radius: 100%;
+  border: 0;
+  outline: 0;
+  transition: 0.3s;
+}
+
+.x_button:hover {
+  background: var(--text-color);
+}
+
+.slogan__footer {
+  font-size: 13px;
+  text-align: center;
+  color: var(--common-color);
+  font-family: "Noto Sans Kr", sans-serif;
+  font-weight: 100;
+}
+
+.slogan__logo {
+  font-size: 30px;
+  margin-top: 30px;
+  font-family: slogan;
+}

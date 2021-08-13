@@ -1,10 +1,8 @@
 from django.urls import path
-
-from smithy.views.main import main_slogan, result, show, loading_view
-
-# from smithy.views.make_slogan import result_slogan
+from smithy.views.main import main_slogan, result, loading_view
 from django.contrib.auth.views import LoginView, LogoutView
 from smithy.views.account import AccountCreateView, AccountDetailView, AccountUpdateView
+
 
 app_name = "smithy"
 
@@ -17,5 +15,4 @@ urlpatterns = [
     path("index/", main_slogan, name="index"),  # url, 연결할 view 함수명, name
     path("loading/", loading_view, name="loading"),
     path("result_slogan/", result, name="result_slogan"),
-    path("show/", show, name="show"),
 ]

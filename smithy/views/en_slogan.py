@@ -138,7 +138,7 @@ def enslogan(info):  # 여기에 사용자 인풋값 받게끔
     input_ids += [slogan_tkn]
 
     device = torch.device('cpu')
-    model.load_state_dict(torch.load("accountapp/models/en_slogan_2epoch_model.pth", map_location=device))
+    model.load_state_dict(torch.load("smithy/models/en_slogan_2epoch_model.pth", map_location=device))
     model.eval()
 
     generated = sample_sequence(
