@@ -3,12 +3,12 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
 
 ### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
+#.vscode/*
+#!.vscode/settings.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
+#!.vscode/extensions.json
+#*.code-workspace
 
 # Local History for Visual Studio Code
 .history/
@@ -21,6 +21,8 @@
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
 .env
+
+accountapp/models/
 
 db.sqlite3
 
