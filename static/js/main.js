@@ -2,6 +2,16 @@ const toggleBtn = document.querySelector(".navbar__toogleBtn");
 const menu = document.querySelector(".navbar__menu");
 const icons = document.querySelector(".navbar__icons");
 
+$(function () {
+  $("#fullpage").fullpage({
+    //options here
+    autoScrolling: true,
+    scrollHorizontally: true,
+    navigation: true,
+    NavigationPosition: "right",
+  });
+});
+
 toggleBtn.addEventListener("click", () => {
   menu.classList.toggle("active");
   icons.classList.toggle("active");

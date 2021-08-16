@@ -127,7 +127,7 @@ a:hover {
 /*------------- main text -------------*/
 
 .mainbox {
-  padding: 200px 0px;
+  padding: 100px 0px 200px 0px;
   max-width: 1024px;
   text-align: center;
   margin-left: auto;
@@ -444,6 +444,7 @@ a:hover {
 }
 
 .slogan__footer {
+  height: 300px;
   font-size: 13px;
   text-align: center;
   color: var(--common-color);
