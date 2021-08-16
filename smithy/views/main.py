@@ -18,7 +18,18 @@ def loading_view(request):
     request.session["select"] = request.POST.get("select", None)
     request.session["info"] = request.POST.get("info", None)
     request.session["sim"] = request.POST.get("sim", None)
+
+    # if request.method == 'POST':
+    #     form = DataForm(request.POST)
+    #     if form.is_valid():
+    #         temp = form.save()
+    #         return render(request, "smithy/loading.html")
+    # else:
+    #     form = DataForm()
+    # context = {'form' : form}
+
     return render(request, "smithy/loading.html")
+
 
 def result(request):
     select = request.session["select"]
@@ -40,9 +51,3 @@ def result(request):
 
     return render(request, "smithy/result_slogan.html", context=context)
 
-
-# def show(request):
-#     value = request.POST.getlist("checkvalue")
-#     context = {"slogans": value}
-#
-#     return render(request, "smithy/show.html", context=context)
