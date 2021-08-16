@@ -20,6 +20,9 @@ tokenizer = PreTrainedTokenizerFast.from_pretrained(MODEL_NAME)
 model = GPT2LMHeadModel.from_pretrained(MODEL_NAME)
 tokenizer.add_special_tokens(TOKENS_DICT)
 
+device = torch.device('cpu')
+model.load_state_dict(torch.load("smithy/models/processed_slogan_final_5epoch_model.pth", map_location=device))
+model.eval()
 
 import torch
 import torch.nn.functional as F
@@ -110,9 +113,9 @@ def koslogan(info):  # 여기에 사용자 인풋값 받게끔
 
     input_ids += [slogan_tkn]
 
-    device = torch.device('cpu')
-    model.load_state_dict(torch.load("smithy/models/processed_slogan_final_5epoch_model.pth", map_location=device))
-    model.eval()
+    # device = torch.device('cpu')
+    # model.load_state_dict(torch.load("smithy/models/processed_slogan_final_5epoch_model.pth", map_location=device))
+    # model.eval()
 
     generated = sample_sequence(
         model,

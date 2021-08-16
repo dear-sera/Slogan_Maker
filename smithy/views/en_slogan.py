@@ -32,6 +32,10 @@ SPECIAL_TOKENS_DICT = {
 tokenizer.add_special_tokens(SPECIAL_TOKENS_DICT)
 model.resize_token_embeddings(len(tokenizer))
 
+device = torch.device('cpu')
+model.load_state_dict(torch.load("smithy/models/en_slogan_2epoch_model.pth", map_location=device))
+model.eval()
+
 
 def top_k_top_p_filtering(logits, top_k=0, top_p=0.0, filter_value=-float("Inf")):
 
@@ -137,9 +141,9 @@ def enslogan(info):  # 여기에 사용자 인풋값 받게끔
 
     input_ids += [slogan_tkn]
 
-    device = torch.device('cpu')
-    model.load_state_dict(torch.load("smithy/models/en_slogan_2epoch_model.pth", map_location=device))
-    model.eval()
+    # device = torch.device('cpu')
+    # model.load_state_dict(torch.load("smithy/models/en_slogan_2epoch_model.pth", map_location=device))
+    # model.eval()
 
     generated = sample_sequence(
         model,
