@@ -45,6 +45,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
+  z-index: 100;
 }
 
 .navbar__logo {
@@ -127,7 +128,7 @@ a:hover {
 /*------------- main text -------------*/
 
 .mainbox {
-  padding: 100px 0px 200px 0px;
+  padding: 0px 0px 200px 0px;
   max-width: 1024px;
   text-align: center;
   margin-left: auto;
