@@ -123,7 +123,7 @@ def koslogan(info):  # 여기에 사용자 인풋값 받게끔
         context=input_ids,
         segments_tokens=segments,
         temperature=0.9,
-        top_k=50,
+        top_k=35,
         top_p=0.95,
         num_samples=4,
     )

@@ -19,15 +19,6 @@ def loading_view(request):
     request.session["info"] = request.POST.get("info", None)
     request.session["sim"] = request.POST.get("sim", None)
 
-    # if request.method == 'POST':
-    #     form = DataForm(request.POST)
-    #     if form.is_valid():
-    #         temp = form.save()
-    #         return render(request, "smithy/loading.html")
-    # else:
-    #     form = DataForm()
-    # context = {'form' : form}
-
     return render(request, "smithy/loading.html")
 
 
